@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sorted.c                                     :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 09:54:30 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/12/23 11:38:40 by olabrahm         ###   ########.fr       */
+/*   Created: 2021/12/24 13:03:27 by olabrahm          #+#    #+#             */
+/*   Updated: 2021/12/24 13:04:49 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	ft_is_sorted(t_stack *stack)
+int	ft_strcmp(char *s1, char *s2)
 {
-	t_element		*current_node;
-	unsigned int	i;
+	unsigned char	*s1_xd;
+	unsigned char	*s2_xd;
+	size_t			i;
 
-	if (stack->size <= 1)
-		return (1);
-	current_node = stack->top->below;
 	i = 0;
-	while (i < stack->size && current_node)
-	{
-		if (current_node->above->value > current_node->value)
-			return (0);
+	s1_xd = (unsigned char *) s1;
+	s2_xd = (unsigned char *) s2;
+	while (s1_xd[i] && s1_xd[i] == s2_xd[i])
 		i++;
-		current_node = current_node->below;
-	}
-	return (1);
+	return (s1_xd[i] - s2_xd[i]);
 }

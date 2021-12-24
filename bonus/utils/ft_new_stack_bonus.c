@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sorted.c                                     :+:      :+:    :+:   */
+/*   ft_new_stack_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 09:54:30 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/12/23 11:38:40 by olabrahm         ###   ########.fr       */
+/*   Created: 2021/12/21 16:32:59 by olabrahm          #+#    #+#             */
+/*   Updated: 2021/12/23 19:18:30 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
-int	ft_is_sorted(t_stack *stack)
+t_stack	*ft_new_stack(void)
 {
-	t_element		*current_node;
-	unsigned int	i;
+	t_stack	*new;
 
-	if (stack->size <= 1)
-		return (1);
-	current_node = stack->top->below;
-	i = 0;
-	while (i < stack->size && current_node)
-	{
-		if (current_node->above->value > current_node->value)
-			return (0);
-		i++;
-		current_node = current_node->below;
-	}
-	return (1);
+	new = (t_stack *) malloc(1 * sizeof(t_stack));
+	if (!new)
+		return (NULL);
+	new->top = NULL;
+	new->size = 0;
+	new->sorted = 0;
+	return (new);
 }

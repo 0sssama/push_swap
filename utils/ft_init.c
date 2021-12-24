@@ -1,32 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sorted.c                                     :+:      :+:    :+:   */
+/*   ft_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 09:54:30 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/12/23 11:38:40 by olabrahm         ###   ########.fr       */
+/*   Created: 2021/12/23 11:46:21 by olabrahm          #+#    #+#             */
+/*   Updated: 2021/12/23 13:54:54 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_is_sorted(t_stack *stack)
+void	ft_init(t_stack *stack_a, t_stack *stack_b)
 {
-	t_element		*current_node;
-	unsigned int	i;
-
-	if (stack->size <= 1)
-		return (1);
-	current_node = stack->top->below;
-	i = 0;
-	while (i < stack->size && current_node)
+	if (stack_a->size <= 1 || ft_is_sorted(stack_a))
+		return ;
+	while (!ft_is_sorted(stack_a))
 	{
-		if (current_node->above->value > current_node->value)
-			return (0);
-		i++;
-		current_node = current_node->below;
+		ft_raisemin(stack_a);
+		pb(stack_a, stack_b);
 	}
-	return (1);
+	while (stack_b->top)
+	{
+		pa(stack_a, stack_b);
+	}
 }
+/*
+A:
+52
+4
+85
+55
+88
+12
+64
+13
+84
+952
+54
+82
+645
+
+B:
+1
+
+*/

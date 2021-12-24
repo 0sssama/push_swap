@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 21:18:06 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/12/22 09:36:17 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/12/23 13:53:01 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static void	rotate(t_stack *stack)
 		return ;
 	top = ft_new_element(ft_pop(stack));
 	ft_unshift(stack, top);
+	ft_reset_index(stack);
 }
 
 void	ra(t_stack *stack_a, int is_rr)

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 14:12:02 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/12/23 19:13:22 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/12/24 13:06:23 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
 # include "../libft/libft.h"
 # include <stdio.h>
@@ -55,24 +55,25 @@ int			ft_is_sorted(t_stack *stack);
 
 /*				 OPERATIONS				*/
 //	sa-sb-ss
-void		sa(t_stack *stack_a, int is_ss);
-void		sb(t_stack *stack_b, int is_ss);
+void		sa(t_stack *stack_a);
+void		sb(t_stack *stack_b);
 void		ss(t_stack *stack_a, t_stack *stack_b);
 // pa-pb
 void		pa(t_stack *stack_a, t_stack *stack_b);
 void		pb(t_stack *stack_a, t_stack *stack_b);
 // ra-rb-rr
-void		ra(t_stack *stack_a, int is_rr);
-void		rb(t_stack *stack_b, int is_rr);
+void		ra(t_stack *stack_a);
+void		rb(t_stack *stack_b);
 void		rr(t_stack *stack_a, t_stack *stack_b);
 // rra-rrb-rrr
-void		rra(t_stack *stack_a, int is_rrr);
-void		rrb(t_stack *stack_b, int is_rrr);
+void		rra(t_stack *stack_a);
+void		rrb(t_stack *stack_b);
 void		rrr(t_stack *stack_a, t_stack *stack_b);
 /*			  OPERATIONS - END			*/
 
 /*				 OTHERS				*/
 void		ft_init(t_stack *stack_a, t_stack *stack_b);
+void		ft_read_stdin(t_stack *stack_a, t_stack *stack_b);
 /*			  OTHERS - END			*/
 
 #endif

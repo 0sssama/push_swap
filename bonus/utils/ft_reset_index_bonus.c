@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sorted.c                                     :+:      :+:    :+:   */
+/*   ft_reset_index_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 09:54:30 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/12/23 11:38:40 by olabrahm         ###   ########.fr       */
+/*   Created: 2021/12/23 13:48:51 by olabrahm          #+#    #+#             */
+/*   Updated: 2021/12/23 19:19:14 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
-int	ft_is_sorted(t_stack *stack)
+void	ft_reset_index(t_stack *stack)
 {
-	t_element		*current_node;
+	t_element		*current;
 	unsigned int	i;
 
-	if (stack->size <= 1)
-		return (1);
-	current_node = stack->top->below;
+	if (stack->size == 0)
+		return ;
 	i = 0;
-	while (i < stack->size && current_node)
+	current = ft_stack_bottom(stack);
+	while (i < stack->size)
 	{
-		if (current_node->above->value > current_node->value)
-			return (0);
+		current->index = i;
+		current = current->above;
 		i++;
-		current_node = current_node->below;
 	}
-	return (1);
 }

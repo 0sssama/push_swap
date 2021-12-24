@@ -6,15 +6,14 @@
 #    By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/08 13:16:18 by olabrahm          #+#    #+#              #
-#    Updated: 2021/12/21 09:02:28 by olabrahm         ###   ########.fr        #
+#    Updated: 2021/12/24 13:04:44 by olabrahm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=gcc
 FLAGS=-Wall -Wextra -Werror
-MANDATORY =	ft_putchar_fd ft_putstr_fd ft_atoi ft_isdigit
-BONUS=		ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast ft_lstadd_back \
-			ft_lstdelone ft_lstclear ft_lstiter ft_lstmap
+MANDATORY =	ft_putchar_fd ft_putstr_fd ft_atoi ft_isdigit ft_strlen ft_strdup \
+			ft_strjoin ft_strcmp
 OBJS=$(MANDATORY:=.o)
 BNS_OBJS =$(BONUS:=.o)
 NAME=libft.a

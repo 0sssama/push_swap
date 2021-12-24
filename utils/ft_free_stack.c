@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 08:03:21 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/12/21 17:02:15 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/12/23 11:38:25 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_free_stack(t_stack *stack)
 {
-	t_element	*current_elem;
-	t_element	*next_elem;
-	int			i;
+	t_element		*current_elem;
+	t_element		*next_elem;
+	unsigned int	i;
 
 	i = 0;
 	if (stack->size == 0)
