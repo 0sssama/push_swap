@@ -2,12 +2,15 @@ import random
 
 ints = []
 
-len = 100
+len = 15
 
-for i in range(len):
-	n = random.randint(-2147483648, 2147483647)
+i = 0
+
+while i < len:
+	n = random.randint(0, 16)
 	if (n not in ints):
 		ints.append(n)
+		i += 1
 
 string_ints = [str(int) for int in ints]
 str_of_ints = " ".join(string_ints)
