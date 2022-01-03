@@ -2,13 +2,13 @@ import random
 
 ints = []
 
-len = 15
+len = 500
 
 i = 0
 
 while i < len:
-	n = random.randint(0, 16)
-	if (n not in ints):
+	n = random.randint(0, 4000)
+	if n not in ints:
 		ints.append(n)
 		i += 1
 

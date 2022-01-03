@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 11:46:21 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/12/23 13:54:54 by olabrahm         ###   ########.fr       */
+/*   Updated: 2021/12/24 18:56:45 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,27 +22,5 @@ void	ft_init(t_stack *stack_a, t_stack *stack_b)
 		pb(stack_a, stack_b);
 	}
 	while (stack_b->top)
-	{
 		pa(stack_a, stack_b);
-	}
 }
-/*
-A:
-52
-4
-85
-55
-88
-12
-64
-13
-84
-952
-54
-82
-645
-
-B:
-1
-
-*/
