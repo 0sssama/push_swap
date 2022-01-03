@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 12:25:17 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/12/24 13:29:42 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/01/03 13:58:08 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,6 @@ static void	ft_apply_instruction(char *inst, t_stack *stack_a, t_stack *stack_b)
 		rrr(stack_a, stack_b);
 	else
 		ft_error("Error\n", stack_a, stack_b, inst);
-	free(inst);
-	inst = ft_strdup("");
 }
 
 void	ft_read_stdin(t_stack *stack_a, t_stack *stack_b)
@@ -63,7 +61,11 @@ void	ft_read_stdin(t_stack *stack_a, t_stack *stack_b)
 	while (read(0, &c, 1))
 	{
 		if (c == '\n')
+		{
 			ft_apply_instruction(instruction, stack_a, stack_b);
+			free(instruction);
+			instruction = ft_strdup("");
+		}
 		else
 			instruction = ft_strjoin(instruction, c);
 	}
