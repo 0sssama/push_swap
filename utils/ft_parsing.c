@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 09:45:14 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/12/21 21:16:32 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/01/10 16:51:23 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ static int	ft_isstring(char *str)
 	int	i;
 
 	i = 0;
+	if (ft_strlen(str) == 0)
+		return (1);
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))

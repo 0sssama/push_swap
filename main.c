@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 14:13:10 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/12/23 19:56:32 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/01/10 16:51:48 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,14 @@ int	main(int ac, char **av)
 	i = ac - 1;
 	while (i >= 1)
 		ft_push(stack_a, ft_new_element(ft_atoi(av[i--])));
-	ft_init(stack_a, stack_b);
+	if (ac <= 4)
+		ft_init3(stack_a);
+	else if (ac == 6)
+		ft_init5(stack_a, stack_b);
+	else if (ac <= 11)
+		ft_init(stack_a, stack_b);
+	else
+		ft_init2(stack_a, stack_b, ac - 1);
 	ft_free_stack(stack_a);
 	ft_free_stack(stack_b);
 	return (0);

@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_raise_elem.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/24 12:30:02 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/01/03 13:56:06 by olabrahm         ###   ########.fr       */
+/*   Created: 2022/01/03 10:32:41 by olabrahm          #+#    #+#             */
+/*   Updated: 2022/01/10 13:19:48 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-char	*ft_strjoin(char *s1, char c)
+void	ft_raise_elem(t_stack *stack, t_element *elem)
 {
-	char	*output;
-	int		i;
-	int		j;
-
-	if (!s1)
-		s1 = ft_strdup("");
-	output = (char *) malloc((ft_strlen(s1) + 2) * sizeof(char));
-	if (!output)
-		return (0);
-	i = 0;
-	j = 0;
-	while (s1[j])
-		output[i++] = s1[j++];
-	output[i++] = c;
-	output[i] = 0;
-	free(s1);
-	s1 = NULL;
-	return (output);
+	if (stack->size <= 1)
+		return ;
+	if (elem->value == stack->top->value)
+		return ;
+	if (elem->index == stack->size - 2)
+	{
+		ra(stack, 0);
+	}
+	if (elem->index < stack->size / 2)
+	{
+		while (stack->top->value != elem->value)
+			rra(stack, 0);
+	}
+	else
+	{
+		while (stack->top->value != elem->value)
+			ra(stack, 0);
+	}
 }

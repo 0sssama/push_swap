@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_stackmax.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/24 12:30:02 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/01/03 13:56:06 by olabrahm         ###   ########.fr       */
+/*   Created: 2021/12/24 18:06:57 by olabrahm          #+#    #+#             */
+/*   Updated: 2021/12/24 18:08:47 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-char	*ft_strjoin(char *s1, char c)
+t_element	*ft_stackmax(t_stack *stack)
 {
-	char	*output;
-	int		i;
-	int		j;
+	t_element		*current;
+	t_element		*highest;
+	unsigned int	i;
 
-	if (!s1)
-		s1 = ft_strdup("");
-	output = (char *) malloc((ft_strlen(s1) + 2) * sizeof(char));
-	if (!output)
-		return (0);
+	if (stack->size == 0)
+		return (NULL);
+	if (stack->size == 1)
+		return (stack->top);
 	i = 0;
-	j = 0;
-	while (s1[j])
-		output[i++] = s1[j++];
-	output[i++] = c;
-	output[i] = 0;
-	free(s1);
-	s1 = NULL;
-	return (output);
+	current = stack->top->below;
+	highest = stack->top;
+	while (i < stack->size - 1)
+	{
+		if (current->value > highest->value)
+			highest = current;
+		current = current->below;
+		i++;
+	}
+	return (highest);
 }

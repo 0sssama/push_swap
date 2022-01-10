@@ -1,13 +1,14 @@
 import random
+import sys
 
 ints = []
 
-len = 500
+len = int(sys.argv[1])
 
 i = 0
 
 while i < len:
-	n = random.randint(0, 4000)
+	n = random.randint(0, 1000)
 	if n not in ints:
 		ints.append(n)
 		i += 1

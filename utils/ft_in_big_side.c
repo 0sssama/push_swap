@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_in_big_side.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/24 12:30:02 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/01/03 13:56:06 by olabrahm         ###   ########.fr       */
+/*   Created: 2022/01/10 12:24:09 by olabrahm          #+#    #+#             */
+/*   Updated: 2022/01/10 13:13:47 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-char	*ft_strjoin(char *s1, char c)
+int	ft_in_big_side(t_stack *stack, t_element *elem)
 {
-	char	*output;
-	int		i;
-	int		j;
+	int			biggest;
+	int			smallest;
+	int			average_value;
 
-	if (!s1)
-		s1 = ft_strdup("");
-	output = (char *) malloc((ft_strlen(s1) + 2) * sizeof(char));
-	if (!output)
-		return (0);
-	i = 0;
-	j = 0;
-	while (s1[j])
-		output[i++] = s1[j++];
-	output[i++] = c;
-	output[i] = 0;
-	free(s1);
-	s1 = NULL;
-	return (output);
+	biggest = ft_stackmax(stack)->value;
+	smallest = ft_stackmin(stack)->value;
+	average_value = (biggest - smallest) / 2 + 1;
+	return (elem->value >= average_value);
 }

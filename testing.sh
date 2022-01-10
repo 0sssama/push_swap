@@ -1,0 +1,1 @@
+echo "Numbers : $(python random_ints.py $@ > test && cat test) - \n\n\n $(./push_swap $(cat test) | wc -l) Lines, and Checker is : $(./push_swap $(cat test) | ./push_swap_checker $(cat test))"
