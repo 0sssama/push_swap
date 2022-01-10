@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 14:13:10 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/01/10 17:13:43 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/01/10 17:30:10 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,5 @@ int	main(int ac, char **av)
 		ft_init2(stack_a, stack_b, ac - 1);
 	ft_free_stack(stack_a);
 	ft_free_stack(stack_b);
-	exit(0);
 	return (0);
 }

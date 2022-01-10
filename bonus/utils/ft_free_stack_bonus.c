@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 08:03:21 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/12/23 19:18:12 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/01/10 17:33:51 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,11 @@ void	ft_free_stack(t_stack *stack)
 
 	i = 0;
 	if (stack->size == 0)
+	{
+		free(stack);
+		stack = NULL;
 		return ;
+	}
 	current_elem = stack->top;
 	while (i < stack->size)
 	{
