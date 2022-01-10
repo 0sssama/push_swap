@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 14:13:10 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/01/10 16:51:48 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/01/10 17:13:43 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ int	main(int ac, char **av)
 	t_stack		*stack_b;
 	int			i;
 
-	if (ft_check_strings(ac, av) || ft_check_edge(ac, av)
-		|| ft_check_duplicates(ac, av))
+	if (ft_check_strs(ac, av) || ft_check_int(ac, av) || ft_check_dups(ac, av))
 		return (ft_error("Error\n"));
 	stack_a = ft_new_stack();
 	stack_b = ft_new_stack();
@@ -44,5 +43,6 @@ int	main(int ac, char **av)
 		ft_init2(stack_a, stack_b, ac - 1);
 	ft_free_stack(stack_a);
 	ft_free_stack(stack_b);
+	exit(0);
 	return (0);
 }

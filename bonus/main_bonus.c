@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 19:15:41 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/01/10 15:55:34 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/01/10 17:15:42 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,28 @@ static int	ft_error(char *str)
 	return (-1);
 }
 
+static int	ft_error_free(char *str, t_stack *stack_a, t_stack *stack_b)
+{
+	free(stack_a);
+	free(stack_b);
+	ft_error(str);
+	return (-1);
+}
+
 int	main(int ac, char **av)
 {
 	t_stack		*stack_a;
 	t_stack		*stack_b;
 	int			i;
 
-	if (ft_check_strings(ac, av) || ft_check_edge(ac, av)
-		|| ft_check_duplicates(ac, av))
+	if (ft_check_strs(ac, av) || ft_check_int(ac, av) || ft_check_dups(ac, av))
 		return (ft_error("Error\n"));
 	if (ac <= 2)
 		return (0);
 	stack_a = ft_new_stack();
 	stack_b = ft_new_stack();
 	if (!stack_a || !stack_b)
-		return (ft_error("Error\n"));
+		return (ft_error_free("Error\n", stack_a, stack_b));
 	i = ac - 1;
 	while (i >= 1)
 		ft_push(stack_a, ft_new_element(ft_atoi(av[i--])));
@@ -44,5 +51,6 @@ int	main(int ac, char **av)
 		ft_putstr_fd("KO\n", 2);
 	ft_free_stack(stack_a);
 	ft_free_stack(stack_b);
+	exit(0);
 	return (0);
 }

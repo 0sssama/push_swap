@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 09:45:14 by olabrahm          #+#    #+#             */
-/*   Updated: 2022/01/10 16:52:07 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/01/10 17:13:05 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static int	ft_isstring(char *str)
 	return (0);
 }
 
-int	ft_check_strings(int ac, char **av)
+int	ft_check_strs(int ac, char **av)
 {
 	int	i;
 
@@ -69,7 +69,7 @@ int	ft_check_strings(int ac, char **av)
 	return (0);
 }
 
-int	ft_check_edge(int ac, char **av)
+int	ft_check_int(int ac, char **av)
 {
 	long long	given;
 	int			i;
@@ -84,7 +84,7 @@ int	ft_check_edge(int ac, char **av)
 	return (0);
 }
 
-int	ft_check_duplicates(int ac, char **av)
+int	ft_check_dups(int ac, char **av)
 {
 	int	i;
 

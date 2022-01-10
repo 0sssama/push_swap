@@ -6,7 +6,7 @@
 /*   By: olabrahm <olabrahm@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 14:12:02 by olabrahm          #+#    #+#             */
-/*   Updated: 2021/12/24 13:06:23 by olabrahm         ###   ########.fr       */
+/*   Updated: 2022/01/10 17:13:17 by olabrahm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ int			ft_shift(t_stack *stack);
 /*			 STACK UTILS - END			*/
 
 /*				PARSING UTILS			*/
-int			ft_check_duplicates(int ac, char **av);
-int			ft_check_edge(int ac, char **av);
-int			ft_check_strings(int ac, char **av);
+int			ft_check_dups(int ac, char **av);
+int			ft_check_int(int ac, char **av);
+int			ft_check_strs(int ac, char **av);
 /*			PARSING UTILS - END			*/
 
 /*			   SORTING UTILS			*/
